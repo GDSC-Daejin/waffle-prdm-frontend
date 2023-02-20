@@ -10,6 +10,7 @@ export const BackTitle = styled.div`
 
 export const PageWrapper = styled.div`
   background-color: #fff;
+  position: relative;
   width: 600px;
   height: fit-content;
   float: right;
@@ -18,8 +19,35 @@ export const PageWrapper = styled.div`
 
 export const Header = styled.div`
   height: 70px;
-  background-color: #f4e7c5;
+  background-color: #D9D9D9;
+  position: relative;
 `;
+
+export const HeaderIcon01 = styled.img`
+    position: absolute;
+    left: 20px;
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    opacity: 70%;
+`
+export const HeaderIcon02 = styled.img`
+    position: absolute;
+    left: 50%;
+    margin-top: 20px;
+    width: 35px;
+    height: 35px;
+    opacity: 70%;
+`
+
+export const HeaderIcon03 = styled.img`
+    position: absolute;
+    right: 20px;
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    opacity: 70%;
+`
 
 export const TipBannerWrap = styled.div`
   height: 100px;
@@ -39,37 +67,54 @@ export const Line = styled.div`
 
 export const ChartWrap = styled.div`
   display: flex;
-  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5px;
 `;
 
 export const ChartTitle = styled.div`
-  display: flex;
+  width: 100%;
+  top: 50px;
+  margin: 10px 10px 5px 20px;
   font-size: 25px;
   font-weight: bold;
-  float: left;
 `
+
+export const ChartSubTitle = styled.div`
+  width: 100%;
+  margin: 2px 2px 2px 20px;
+  font-size: 15px;
+`
+
 export const ChartSection = styled.div`
   display: flex;
+  margin: 5px;
 `
 
 export const LoginWrap = styled.div`
-  margin: 10px 0 15px 0;
-  height: 600px;
+  position: relative;
+  flex-wrap: wrap;
+  height: 530px;
 `
 
 export const LoginTitle = styled.div`
-  display: flex;
-  font-size: 25px;
+  margin: 60px 10px 10px 25px;
+  width: 100%;
+  font-size: 30px;
   font-weight: bold;
-  float: left;
 `
 export const LoginSubTitle = styled.div`
+  margin: 10px 10px 10px 28px;
+  width: 100%;
   font-size: 16px;
   font-weight: normal;
-  margin: 10px 0 10px 10px;
 `
 export const LoginButton = styled.img`
-  display: flex;
+  position: absolute;
+  bottom: 40px;
+  margin-left: 20%;
+  width: 350px;
+  height: 70px;
 `
 export const MenuWrap = styled.div`
   margin: 10px 0 15px 0;

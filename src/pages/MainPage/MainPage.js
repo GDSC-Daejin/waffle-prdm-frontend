@@ -12,9 +12,12 @@ import {
   MenuWrap,
   PageWrapper,
   TipBanner,
-  TipBannerWrap,
+  TipBannerWrap, ChartSubTitle, HeaderIcon01, HeaderIcon02, HeaderIcon03,
 } from '../../PageStyles';
 import menu from '../../assets/222.svg';
+import Back from '../../assets/HeaderIcon_Back.png';
+import Home from '../../assets/HeaderIcon_Home.png';
+import User from '../../assets/HeaderIcon_User.png';
 import ChartPage from "./ChartPage";
 
 function MainPage() {
@@ -26,13 +29,18 @@ function MainPage() {
         at the Bake Shop
       </BackTitle>
       <PageWrapper>
-        <Header>헤더</Header>
+        <Header>
+          <HeaderIcon01 src={Back}/>
+          <HeaderIcon02 src={Home}/>
+          <HeaderIcon03 src={User}/>
+        </Header>
         <TipBannerWrap>
           <TipBanner>팁 배너임</TipBanner>
         </TipBannerWrap>
         <Line />
         <ChartWrap>
           <ChartTitle>음식물 차트</ChartTitle>
+          <ChartSubTitle>지역을 선택해 주세요</ChartSubTitle>
           <ChartPage />
         </ChartWrap>
         <Line />

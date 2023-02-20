@@ -3,11 +3,14 @@ import { Chart } from "react-google-charts";
 import {
     BackTitle,
     Footer,
-    Header,
+    Header, HeaderIcon01, HeaderIcon02, HeaderIcon03,
     Line, LoginButton, LoginSubTitle, LoginTitle, LoginWrap,
     PageWrapper,
 } from '../../PageStyles';
 import loginButtonImg from '../../assets/googleLogin.png';
+import Back from "../../assets/HeaderIcon_Back.png";
+import Home from "../../assets/HeaderIcon_Home.png";
+import User from "../../assets/HeaderIcon_User.png";
 
 function LoginPage() {
     return(
@@ -18,19 +21,16 @@ function LoginPage() {
                 at the Bake Shop
             </BackTitle>
             <PageWrapper>
-                <Header>헤더</Header>
+                <Header>
+                    <HeaderIcon01 src={Back}/>
+                    <HeaderIcon02 src={Home}/>
+                    <HeaderIcon03 src={User}/>
+                </Header>
                 <Line />
                 <LoginWrap>
                     <LoginTitle>로그인/회원가입</LoginTitle>
                     <LoginSubTitle>로그인/회원가입 후 더 많은 경험을 즐기세요!</LoginSubTitle>
                     <LoginButton src={loginButtonImg} />
-                    <Chart
-                        chartType="ScatterChart"
-                        data={[["Age", "Weight"], [4, 5.5], [8, 12]]}
-                        width="100%"
-                        height="400px"
-                        legendToggle
-                    />
                 </LoginWrap>
                 <Line />
                 <Footer>푸터</Footer>
