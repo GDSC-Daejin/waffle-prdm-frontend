@@ -1,6 +1,8 @@
 import React from 'react';
 import {
   BackTitle,
+  ChartWrap,
+  ChartTitle,
   Footer,
   Header,
   Line,
@@ -13,6 +15,7 @@ import {
   TipBannerWrap,
 } from '../../PageStyles';
 import menu from '../../assets/222.svg';
+import ChartPage from "./ChartPage";
 
 function MainPage() {
   return (
@@ -27,6 +30,11 @@ function MainPage() {
         <TipBannerWrap>
           <TipBanner>팁 배너임</TipBanner>
         </TipBannerWrap>
+        <Line />
+        <ChartWrap>
+          <ChartTitle>음식물 차트</ChartTitle>
+          <ChartPage />
+        </ChartWrap>
         <Line />
         <MenuWrap>
           <MenuTitle>

@@ -37,6 +37,40 @@ export const Line = styled.div`
   border: #d9d9d9 4px solid;
 `;
 
+export const ChartWrap = styled.div`
+  display: flex;
+  text-align: center;
+`;
+
+export const ChartTitle = styled.div`
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  float: left;
+`
+export const ChartSection = styled.div`
+  display: flex;
+`
+
+export const LoginWrap = styled.div`
+  margin: 10px 0 15px 0;
+  height: 600px;
+`
+
+export const LoginTitle = styled.div`
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  float: left;
+`
+export const LoginSubTitle = styled.div`
+  font-size: 16px;
+  font-weight: normal;
+  margin: 10px 0 10px 10px;
+`
+export const LoginButton = styled.img`
+  display: flex;
+`
 export const MenuWrap = styled.div`
   margin: 10px 0 15px 0;
 `;
