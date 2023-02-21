@@ -1,8 +1,6 @@
 import React from 'react';
-import { Chart } from "react-google-charts";
 import {
     BackTitle,
-    Footer,
     Header, HeaderIcon01, HeaderIcon02, HeaderIcon03,
     Line, LoginButton, LoginSubTitle, LoginTitle, LoginWrap,
     PageWrapper,
@@ -19,6 +17,11 @@ function LoginPage() {
                 Find a Delicious Slice
                 <br />
                 at the Bake Shop
+                <br />
+                Find a Delicious Slice
+                <br />
+                at the Bake Shop
+                <br />
             </BackTitle>
             <PageWrapper>
                 <Header>
@@ -32,8 +35,6 @@ function LoginPage() {
                     <LoginSubTitle>로그인/회원가입 후 더 많은 경험을 즐기세요!</LoginSubTitle>
                     <LoginButton src={loginButtonImg} />
                 </LoginWrap>
-                <Line />
-                <Footer>푸터</Footer>
             </PageWrapper>
         </div>
     );

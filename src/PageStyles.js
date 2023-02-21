@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const BackTitle = styled.div`
+  position: fixed;
+  margin: 200px 0 10px 100px;
   font-size: 40px;
   color: #f4e7c5;
   font-weight: bold;
-  margin: 670px 0 10px 100px;
-  position: fixed;
 `;
 
 export const PageWrapper = styled.div`
@@ -33,7 +33,7 @@ export const HeaderIcon01 = styled.img`
 `
 export const HeaderIcon02 = styled.img`
     position: absolute;
-    left: 50%;
+    left: 48%;
     margin-top: 20px;
     width: 35px;
     height: 35px;
@@ -69,8 +69,17 @@ export const ChartWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 5px;
+  margin: 0px;
 `;
+
+export const ChartTitleWrap = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px;
+  padding: 10px 10px 20px ;
+  width: 100%;
+  background-color: #D9D9D9;
+`
 
 export const ChartTitle = styled.div`
   width: 100%;
@@ -88,33 +97,33 @@ export const ChartSubTitle = styled.div`
 
 export const ChartSection = styled.div`
   display: flex;
-  margin: 5px;
+  margin: 20px;
 `
-
 export const LoginWrap = styled.div`
   position: relative;
   flex-wrap: wrap;
-  height: 530px;
+  height: 620px;
 `
 
 export const LoginTitle = styled.div`
-  margin: 60px 10px 10px 25px;
+  margin: 60px 10px 10px 40px;
   width: 100%;
   font-size: 30px;
   font-weight: bold;
 `
 export const LoginSubTitle = styled.div`
-  margin: 10px 10px 10px 28px;
+  margin: 10px 10px 10px 45px;
   width: 100%;
   font-size: 16px;
   font-weight: normal;
 `
 export const LoginButton = styled.img`
   position: absolute;
-  bottom: 40px;
+  bottom: 90px;
   margin-left: 20%;
   width: 350px;
   height: 70px;
+  filter: drop-shadow(1px 1px 1px #282c34);
 `
 export const MenuWrap = styled.div`
   margin: 10px 0 15px 0;
