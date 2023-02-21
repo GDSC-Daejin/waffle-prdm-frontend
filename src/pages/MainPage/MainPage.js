@@ -17,11 +17,11 @@ import menu from '../../assets/222.svg';
 function MainPage() {
   return (
     <div>
-      <BackTitle>
-        Find a Delicious Slice
-        <br />
-        at the Bake Shop
-      </BackTitle>
+      {/*<BackTitle>*/}
+      {/*  Find a Delicious Slice*/}
+      {/*  <br />*/}
+      {/*  at the Bake Shop*/}
+      {/*</BackTitle>*/}
       <PageWrapper>
         <Header>헤더</Header>
         <TipBannerWrap>
