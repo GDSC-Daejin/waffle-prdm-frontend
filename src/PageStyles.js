@@ -102,7 +102,7 @@ export const ChartSection = styled.div`
 export const LoginWrap = styled.div`
   position: relative;
   flex-wrap: wrap;
-  height: 620px;
+  height: 100vh;
 `
 
 export const LoginTitle = styled.div`
@@ -122,7 +122,6 @@ export const LoginButton = styled.img`
   bottom: 90px;
   margin-left: 20%;
   width: 350px;
-  height: 70px;
   filter: drop-shadow(1px 1px 1px #282c34);
 `
 export const MenuWrap = styled.div`
