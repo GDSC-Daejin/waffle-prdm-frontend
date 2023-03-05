@@ -4,6 +4,9 @@ import {
   ChatImg,
   Footer,
   Header,
+  HeaderIcon01,
+  HeaderIcon02,
+  HeaderIcon03,
   HotSort,
   Line,
   List,
@@ -23,12 +26,24 @@ import {
   SortBtnWrap,
   TopBox,
 } from '../../PageStyles';
+import Back from '../../assets/HeaderIcon_Back.png';
+import Home from '../../assets/HeaderIcon_Home.png';
+import { Link } from 'react-router-dom';
+import User from '../../assets/HeaderIcon_User.png';
 
 function ListPage() {
   return (
     <div>
       <PageWrapper>
-        <Header>헤더</Header>
+        <Header>
+          <Link to="/">
+            <HeaderIcon01 src={Back} />
+          </Link>
+          <HeaderIcon02 src={Home} />
+          <Link to="/login">
+            <HeaderIcon03 src={User} />
+          </Link>
+        </Header>
         <ListBannerWrap>
           <ListBanner>리스트 배너</ListBanner>
         </ListBannerWrap>

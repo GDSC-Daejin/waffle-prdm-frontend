@@ -135,6 +135,7 @@ export const MenuTitle = styled.div`
   font-weight: bold;
   margin: 20px 0 10px 30px;
   float: left;
+  link: none;
 `;
 
 export const MenuSubTilte = styled.div`

@@ -69,7 +69,9 @@ function MainPage() {
             봉사 모임 구하기
             <MenuSubTilte>같이 봉사활동해요~</MenuSubTilte>
           </MenuTitle>
-          <MenuImg src={menu} />
+          <Link to="list">
+            <MenuImg src={menu} />
+          </Link>
         </MenuWrap>
         <Line />
         <MenuWrap>
