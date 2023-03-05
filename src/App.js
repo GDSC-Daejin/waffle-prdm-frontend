@@ -4,10 +4,17 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import MainPage from './pages/MainPage/MainPage';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
+import { BackTitle } from './PageStyles';
+import ListPage from './pages/ListPage/ListPage';
 
 function App() {
   return (
     <div className="App">
+      <BackTitle>
+        Find a Delicious Slice
+        <br />
+        at the Bake Shop
+      </BackTitle>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />

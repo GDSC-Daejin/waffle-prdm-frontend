@@ -160,3 +160,111 @@ export const Footer = styled.div`
   height: 70px;
   background-color: #d9d9d9;
 `;
+
+//
+// ListPage 스타일
+//
+export const ListBannerWrap = styled.div`
+  height: 150px;
+  background-color: darkgray;
+  text-align: center;
+`;
+
+export const ListBanner = styled.div`
+  color: #fff;
+  font-size: 16px;
+  padding: 30px 0 0 0;
+`;
+
+export const TopBox = styled.div`
+  height: 70px;
+  background-color: #d9d9d9;
+  display: flex;
+`;
+
+export const MenuNameBox = styled.div`
+  width: 90px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: wheat;
+  font-size: 14px;
+  text-align: center;
+  padding: 7px;
+  margin: 20px 0 0 29px;
+`;
+
+export const SortBtnWrap = styled.div`
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 30px 0 0 340px;
+`;
+
+export const NewSort = styled.div`
+  cursor: pointer;
+`;
+
+export const HotSort = styled.div`
+  cursor: pointer;
+`;
+
+export const ListWrapper = styled.div``;
+
+export const List = styled.div`
+  width: 100%;
+  height: 180px;
+  display: flex;
+  border-bottom: #d9d9d9 1px solid;
+`;
+
+export const ListImg = styled.img`
+  width: 110px;
+  height: 110px;
+  margin: auto 30px auto 30px;
+`;
+
+export const ListData = styled.div`
+  margin: 40px 0 0 0;
+  width: 300px;
+  height: 150px;
+`;
+
+export const ListTitle = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
+
+export const ListContent = styled.div`
+  font-size: 14px;
+`;
+
+export const ListInfo = styled.div`
+  display: block;
+`;
+
+export const ListDate = styled.div`
+  font-size: 14px;
+  color: gray;
+  margin: 40px 0 0 35px;
+`;
+
+export const ListChat = styled.div`
+  display: flex;
+  gap: 7px;
+  height: 50px;
+  width: 50px;
+  margin: 70px 0 0 50px;
+`;
+
+export const ChatImg = styled.img`
+  width: 15px;
+  height: 15px;
+`;
+
+export const ChatCount = styled.div`
+  font-size: 13px;
+  color: gray;
+  margin-top: -2px;
+`;
