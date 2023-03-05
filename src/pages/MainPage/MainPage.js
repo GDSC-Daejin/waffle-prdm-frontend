@@ -12,13 +12,20 @@ import {
   MenuWrap,
   PageWrapper,
   TipBanner,
-  TipBannerWrap, ChartSubTitle, HeaderIcon01, HeaderIcon02, HeaderIcon03, ChartTitleWrap, FullScreen,
+  TipBannerWrap,
+  ChartSubTitle,
+  HeaderIcon01,
+  HeaderIcon02,
+  HeaderIcon03,
+  ChartTitleWrap,
+  FullScreen,
 } from '../../PageStyles';
 import menu from '../../assets/222.svg';
 import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import User from '../../assets/HeaderIcon_User.png';
-import ChartPage from "./ChartPage";
+import ChartPage from './ChartPage';
+import { Link } from 'react-router-dom';
 
 function MainPage() {
   return (
@@ -35,12 +42,18 @@ function MainPage() {
       </BackTitle>
       <PageWrapper>
         <Header>
-          <HeaderIcon01 src={Back}/>
-          <HeaderIcon02 src={Home}/>
-          <HeaderIcon03 src={User}/>
+          <HeaderIcon01 src={Back} />
+          <HeaderIcon02 src={Home} />
+          <Link to="/login">
+            <HeaderIcon03 src={User} />
+          </Link>
         </Header>
         <TipBannerWrap>
-          <TipBanner>Tip 배너 (랜덤)<br/>ex) 식재료 껍질은 육수 등에 활용 가능하다는 사실!</TipBanner>
+          <TipBanner>
+            Tip 배너 (랜덤)
+            <br />
+            ex) 식재료 껍질은 육수 등에 활용 가능하다는 사실!
+          </TipBanner>
         </TipBannerWrap>
         <Line />
         <ChartWrap>
