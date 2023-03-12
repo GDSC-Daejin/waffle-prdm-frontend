@@ -87,10 +87,11 @@ function MainPage() {
             꿀팁 / Q&A 게시판
             <MenuSubTilte>다양한 꿀팀을 공유해봅시다~!</MenuSubTilte>
           </MenuTitle>
-          <MenuImg src={menu} />
+          <Link to="/board">
+            <MenuImg src={menu} />
+          </Link>
         </MenuWrap>
         <Line />
-
         <Footer>푸터</Footer>
       </PageWrapper>
     </div>
