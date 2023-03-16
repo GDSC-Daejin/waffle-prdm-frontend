@@ -55,20 +55,22 @@ function ListPage() {
           </SortBtnWrap>
         </TopBox>
         <ListWrapper>
-          <List>
-            <ListImg />
-            <ListData>
-              <ListTitle>당근나눔</ListTitle>
-              <ListContent>쓰레기통 무료나눔합니다. </ListContent>
-            </ListData>
-            <ListInfo>
-              <ListDate>23.02.01</ListDate>
-              <ListChat>
-                <ChatImg />
-                <ChatCount>5</ChatCount>
-              </ListChat>
-            </ListInfo>
-          </List>
+          <Link to="/detail">
+            <List>
+              <ListImg />
+              <ListData>
+                <ListTitle>당근나눔</ListTitle>
+                <ListContent>쓰레기통 무료나눔합니다. </ListContent>
+              </ListData>
+              <ListInfo>
+                <ListDate>23.02.01</ListDate>
+                <ListChat>
+                  <ChatImg />
+                  <ChatCount>5</ChatCount>
+                </ListChat>
+              </ListInfo>
+            </List>
+          </Link>
           <List>
             <ListImg />
             <ListData>

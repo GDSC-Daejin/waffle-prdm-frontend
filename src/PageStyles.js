@@ -269,3 +269,150 @@ export const ChatCount = styled.div`
   color: gray;
   margin-top: -2px;
 `;
+
+// DetailPage 스타일
+
+export const CategoryTitleBtn = styled.button`
+  width: 144px;
+  height: 35px;
+  background: #d9d9d9;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 40px 0 30px 50px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+`;
+
+export const UserInfoWrapper = styled.div`
+  display: flex;
+  margin: 0 0 5px 30px;
+`;
+
+export const UserImg = styled.img`
+  margin: 30px 10px 20px 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: none;
+  background: #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
+export const TxtWrap = styled.div`
+  display: flex;
+`;
+
+export const UserName = styled.div`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.58);
+  margin: auto 5px auto 10px;
+`;
+
+export const UploadDate = styled.div`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.58);
+  margin: auto 10px auto 10px;
+`;
+
+export const DetailLine = styled.div`
+  width: 506px;
+  height: 0px;
+  border: 1px solid #d9d9d9;
+  margin: 0 auto;
+`;
+
+export const Content = styled.div`
+  margin: 20px auto;
+  padding: 40px 70px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.58);
+`;
+
+export const CommentInfoWrap = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-left: 85%;
+  margin-top: 15px;
+  margin-bottom: 50px;
+`;
+
+export const CommentList = styled.div`
+  height: max-content;
+  margin-bottom: 50px;
+`;
+
+export const Comment = styled.div`
+  margin: 10px 0 10px 20px;
+`;
+
+export const CommentInfo = styled.div`
+  display: flex;
+  margin: 25px 0 5px 0;
+`;
+
+export const CommentUserImg = styled.img`
+  width: 40px;
+  height: 40px;
+  margin: auto 10px auto 30px;
+  border-radius: 100%;
+  border: none;
+  background: #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
+export const CommentUserName = styled.div`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.58);
+  margin: auto 0 auto 10px;
+`;
+
+export const CommentDate = styled.div`
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.58);
+  margin: auto 0 auto 10px;
+`;
+
+export const CommentContent = styled.div`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.58);
+  margin: 6px 0 25px 90px;
+`;
+
+export const CommentAddWrap = styled.div``;
+
+export const CommentAddInput = styled.input`
+  width: 506px;
+  height: 58px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+`;
+
+export const AddBtn = styled.button`
+  width: 51px;
+  height: 29px;
+  filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.58);
+`;

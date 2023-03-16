@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import { BackTitle } from './PageStyles';
 import ListPage from './pages/ListPage/ListPage';
+import DetailPage from './pages/DetailPage/DetailPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/list" element={<ListPage />} />
+          <Route path="/detail" element={<DetailPage />} />
         </Routes>
       </BrowserRouter>
     </div>
