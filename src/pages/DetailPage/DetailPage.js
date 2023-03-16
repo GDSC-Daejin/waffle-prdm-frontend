@@ -8,6 +8,7 @@ import {
   Comment,
   CommentAdd,
   CommentAddInput,
+  CommentAddWrap,
   CommentContent,
   CommentDate,
   CommentImg,
@@ -117,10 +118,10 @@ function DetailPage() {
             <CommentContent>저요 저요</CommentContent>
           </Comment>
           <DetailLine />
-          <CommentCreatWrap>
+          <CommentAddWrap>
             <CommentAddInput />
             <AddBtn>등록</AddBtn>
-          </CommentCreatWrap>
+          </CommentAddWrap>
         </CommentList>
       </PageWrapper>
     </div>

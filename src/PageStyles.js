@@ -398,17 +398,31 @@ export const CommentContent = styled.div`
   margin: 6px 0 25px 90px;
 `;
 
-export const CommentAddWrap = styled.div``;
+export const CommentAddWrap = styled.div`
+  width: 510px;
+  height: 60px;
+  border: 1px gray solid;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin: 30px auto 0 auto;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+`;
 
 export const CommentAddInput = styled.input`
-  width: 506px;
-  height: 58px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border: none;
+  width: 400px;
+  height: 50px;
+  padding: 5px 20px;
+  opacity: 50%;
+  background-color: #d9d9d9;
 `;
 
 export const AddBtn = styled.button`
-  width: 51px;
-  height: 29px;
+  width: 52px;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 10px;
+  border: 1px #282c34 solid;
   filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.25));
   font-style: normal;
   font-weight: 500;
