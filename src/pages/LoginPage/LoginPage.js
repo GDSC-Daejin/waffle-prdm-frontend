@@ -35,8 +35,8 @@ function LoginPage() {
         <Header>
           <Link to="/">
             <HeaderIcon01 src={Back} />
+            <HeaderIcon02 src={Home} />
           </Link>
-          <HeaderIcon02 src={Home} />
           <HeaderIcon03 src={User} />
         </Header>
         <Line />

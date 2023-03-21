@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { BackTitle } from './PageStyles';
 import ListPage from './pages/ListPage/ListPage';
 import DetailPage from './pages/DetailPage/DetailPage';
+import BoardPage from "./pages/BoardPage/BoardPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/list" element={<ListPage />} />
           <Route path="/detail" element={<DetailPage />} />
+          <Route path="/board" element={<BoardPage />} />
         </Routes>
       </BrowserRouter>
     </div>

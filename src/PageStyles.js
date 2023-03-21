@@ -430,3 +430,79 @@ export const AddBtn = styled.button`
   line-height: 18px;
   color: rgba(0, 0, 0, 0.58);
 `;
+//
+//BoardPage 스타일
+//
+export const BoardWrap = styled.div`
+  position: relative;
+  flex-wrap: wrap;
+  height: 90vh;
+`;
+export const BoardTitleBoxWrap = styled.div`
+  position: relative;
+  height: 10%;
+  //background-color: darkred;
+`
+export const BoardContentBoxWrap = styled.div`
+  position: relative;
+  height: 40%;
+  //background-color: orange;
+`
+export const BoardTitle = styled.div`
+  margin: 40px auto 50px 30px;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #598A66;
+  text-decoration-thickness: 3px;
+`;
+export const BoardSubTitle = styled.div`
+  width: 100%;
+  margin: 15px 30px 10px 40px;
+  font-size: 20px;
+  font-weight: bold;
+`;
+export const BoardTitleInput = styled.input`
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  margin: 5px auto auto 55px;
+  font-size: 20px;
+  width: 80%;
+`
+export const BoardContentInputWrap = styled.div`
+    background-color: #F3F3F3;
+    width: 85%;
+    margin: 5px 40px auto 40px;
+    height: 90%;
+    border-radius: 5%;
+`
+export const BoardContentInput = styled.input`
+  margin: 20px auto auto 20px;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+`
+export const BoardImageWrap = styled.div`
+  margin-top: 30px;
+`
+export const ImageAddIcon = styled.img`
+  width: 10%;
+  height: 10%;
+  opacity: 70%;
+  margin-left: 60px;
+`;
+export const BoardButtonWrap = styled.div`
+    margin-top: 30px;
+`
+export const BoardSubmitButton = styled.button`
+    border: none;
+    background-color: #F4E7C5;
+    border-radius: 8%;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 100px;
+    height: 70px;
+    margin-left: 40%;
+`
