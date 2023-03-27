@@ -17,8 +17,24 @@ import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import User from '../../assets/HeaderIcon_User.png';
 import { Link } from 'react-router-dom';
+import { auth } from './Firebase';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { useState } from 'react';
 
 function LoginPage() {
+  const [userData, setUserData] = useState(null);
+
+  function handleGoogleLogin() {
+    const provider = new GoogleAuthProvider(); // provider를 구글로 설정
+    signInWithPopup(auth, provider) // popup을 이용한 signup
+        .then((data) => {
+          setUserData(data.user);
+          console.log(data)
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  }
   return (
     <div>
       <BackTitle>
@@ -45,6 +61,10 @@ function LoginPage() {
           <LoginSubTitle>
             로그인/회원가입 후 더 많은 경험을 즐기세요!
           </LoginSubTitle>
+          <div>
+            <button onClick={handleGoogleLogin}>Login</button>
+            {userData ? userData.displayName : null}
+          </div>
           <LoginButton src={loginButtonImg} />
         </LoginWrap>
       </PageWrapper>
