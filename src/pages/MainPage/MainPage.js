@@ -27,24 +27,8 @@ import User from '../../assets/HeaderIcon_User.png';
 import ChartPage from './ChartPage';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 function MainPage() {
-  //날짜 입력 data
-  const [selectedDate1, setSelectedDate1] = useState(null);
-  const [selectedDate2, setSelectedDate2] = useState(null);
-  //foodwaste Data
-  const [data, setData] = useState([]);
-
-  //날짜 data 관리
-  const handleDateChange1 = date => {
-    setSelectedDate1(date);
-  };
-  const handleDateChange2 = date => {
-    setSelectedDate2(date);
-  };
-
   const ApiFoodwaste = () => {
     axios.get('https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste/city')
         .then(response => {
@@ -99,23 +83,6 @@ function MainPage() {
             </TipBanner>
           </TipBannerWrap>
           <Line />
-          <div>
-            <DatePicker>
-              selected={selectedDate1}
-              onChange={handleDateChange1}
-              dateFormat="yyyy/MM/dd"
-              placeholderText="시작날짜"
-            </DatePicker>
-            {selectedDate1 && (
-                <p>선택한 날짜는 {selectedDate1.toLocaleDateString()} 입니다.</p>
-            )}
-            <DatePicker>
-              selected={selectedDate2}
-              onChange={handleDateChange2}
-              dateFormat="yyyy/MM/dd"
-              placeholderText="종료날짜"
-            </DatePicker>
-          </div>
           <ChartWrap>
             <ChartTitleWrap>
               <ChartTitle>음식물 차트</ChartTitle>
