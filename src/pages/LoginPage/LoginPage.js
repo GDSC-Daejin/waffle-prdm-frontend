@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BackTitle,
   Header,
@@ -20,6 +20,8 @@ import { Link } from 'react-router-dom';
 import { auth } from './Firebase';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { LoginState } from '../../state/LoginState';
 
 function LoginPage() {
   const [userData, setUserData] = useState(null);
@@ -27,14 +29,25 @@ function LoginPage() {
   function handleGoogleLogin() {
     const provider = new GoogleAuthProvider(); // provider를 구글로 설정
     signInWithPopup(auth, provider) // popup을 이용한 signup
-        .then((data) => {
-          setUserData(data.user);
-          console.log(data)
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      .then((data) => {
+        setUserData(data.user);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
+
+  const [isLoggedIn, setLoggedIn] = useRecoilState(LoginState);
+  const token = window.location.href.split('?token=')[1];
+
+  useEffect(() => {
+    if (token) localStorage.setItem('token', token);
+    if (localStorage.getItem('token')) setLoggedIn(true);
+  }, []);
+
+  console.log(isLoggedIn);
+
   return (
     <div>
       <BackTitle>
@@ -67,7 +80,6 @@ function LoginPage() {
             </button>
             {userData ? userData.displayName : null}
           </div>
-
         </LoginWrap>
       </PageWrapper>
     </div>
