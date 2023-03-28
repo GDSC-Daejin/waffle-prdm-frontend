@@ -210,13 +210,21 @@ export const HotSort = styled.div`
   cursor: pointer;
 `;
 
-export const ListWrapper = styled.div``;
+export const ListWrapper = styled.div`
+  a {
+    color: #282c34;
+    text-decoration: none;
+  }
+`;
 
 export const List = styled.div`
   width: 100%;
   height: 180px;
   display: flex;
   border-bottom: #d9d9d9 1px solid;
+  :hover {
+    background-color: #d9d9d9;
+  }
 `;
 
 export const ListImg = styled.img`
@@ -291,9 +299,9 @@ export const UserInfoWrapper = styled.div`
 `;
 
 export const UserImg = styled.img`
-  margin: 30px 10px 20px 30px;
-  width: 60px;
-  height: 60px;
+  margin: 5px 10px 20px 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 100%;
   border: none;
   background: #d9d9d9;
@@ -302,12 +310,19 @@ export const UserImg = styled.img`
 
 export const TxtWrap = styled.div`
   display: flex;
+  margin-bottom: 17px;
+`;
+
+export const Title = styled.div`
+  margin: 7px 0 15px 63px;
+  font-size: 25px;
+  font-weight: bold;
 `;
 
 export const UserName = styled.div`
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 19px;
   color: rgba(0, 0, 0, 0.58);
   margin: auto 5px auto 10px;
@@ -316,7 +331,7 @@ export const UserName = styled.div`
 export const UploadDate = styled.div`
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 19px;
   color: rgba(0, 0, 0, 0.58);
   margin: auto 10px auto 10px;
@@ -348,12 +363,12 @@ export const CommentInfoWrap = styled.div`
 `;
 
 export const CommentList = styled.div`
-  height: max-content;
+  min-height: 50vh;
   margin-bottom: 50px;
 `;
 
 export const Comment = styled.div`
-  margin: 10px 0 10px 20px;
+  margin: 15px 0 10px 20px;
 `;
 
 export const CommentInfo = styled.div`
@@ -403,7 +418,7 @@ export const CommentAddWrap = styled.div`
   height: 60px;
   border: 1px gray solid;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  margin: 30px auto 0 auto;
+  margin: 20px auto 0 auto;
   background-color: #d9d9d9;
   border-radius: 10px;
 `;
@@ -442,18 +457,18 @@ export const BoardTitleBoxWrap = styled.div`
   position: relative;
   height: 10%;
   //background-color: darkred;
-`
+`;
 export const BoardContentBoxWrap = styled.div`
   position: relative;
   height: 40%;
   //background-color: orange;
-`
+`;
 export const BoardTitle = styled.div`
   margin: 40px auto 50px 30px;
   font-size: 30px;
   font-weight: bold;
   text-decoration: underline;
-  text-decoration-color: #598A66;
+  text-decoration-color: #598a66;
   text-decoration-thickness: 3px;
 `;
 export const BoardSubTitle = styled.div`
@@ -465,27 +480,27 @@ export const BoardSubTitle = styled.div`
 export const BoardTitleInput = styled.input`
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid #ccc;
   margin: 5px auto auto 55px;
   font-size: 20px;
   width: 80%;
-`
+`;
 export const BoardContentInputWrap = styled.div`
-    background-color: #F3F3F3;
-    width: 85%;
-    margin: 5px 40px auto 40px;
-    height: 90%;
-    border-radius: 5%;
-`
+  background-color: #f3f3f3;
+  width: 85%;
+  margin: 5px 40px auto 40px;
+  height: 90%;
+  border-radius: 5%;
+`;
 export const BoardContentInput = styled.input`
   margin: 20px auto auto 20px;
   font-size: 20px;
   border: none;
   background-color: transparent;
-`
+`;
 export const BoardImageWrap = styled.div`
   margin-top: 30px;
-`
+`;
 export const ImageAddIcon = styled.img`
   width: 10%;
   height: 10%;
@@ -493,16 +508,16 @@ export const ImageAddIcon = styled.img`
   margin-left: 60px;
 `;
 export const BoardButtonWrap = styled.div`
-    margin-top: 30px;
-`
+  margin-top: 30px;
+`;
 export const BoardSubmitButton = styled.button`
-    border: none;
-    background-color: #F4E7C5;
-    border-radius: 8%;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    width: 100px;
-    height: 70px;
-    margin-left: 40%;
-`
+  border: none;
+  background-color: #f4e7c5;
+  border-radius: 8%;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+  height: 70px;
+  margin-left: 40%;
+`;

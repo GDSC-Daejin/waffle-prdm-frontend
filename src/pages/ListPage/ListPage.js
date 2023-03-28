@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ChatCount,
   ChatImg,
@@ -30,8 +30,20 @@ import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import { Link } from 'react-router-dom';
 import User from '../../assets/HeaderIcon_User.png';
+import axios from 'axios';
 
 function ListPage() {
+  const [isList, setList] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://pr-dm-ca227.du.r.appspot.com/api/v1/post/list')
+      .then((res) => {
+        setList(res.data.content);
+        console.log(res.data.content);
+      });
+  }, []);
+
   return (
     <div>
       <PageWrapper>
@@ -49,70 +61,32 @@ function ListPage() {
         </ListBannerWrap>
         <TopBox>
           <MenuNameBox>챌린지 인증</MenuNameBox>
-          <SortBtnWrap>
-            <NewSort>최신순</NewSort>
-            <HotSort>인기순</HotSort>
-          </SortBtnWrap>
+          {/*<SortBtnWrap>*/}
+          {/*  <NewSort>최신순</NewSort>*/}
+          {/*  <HotSort>인기순</HotSort>*/}
+          {/*</SortBtnWrap>*/}
         </TopBox>
         <ListWrapper>
-          <Link to="/detail">
-            <List>
-              <ListImg />
-              <ListData>
-                <ListTitle>당근나눔</ListTitle>
-                <ListContent>쓰레기통 무료나눔합니다. </ListContent>
-              </ListData>
-              <ListInfo>
-                <ListDate>23.02.01</ListDate>
-                <ListChat>
-                  <ChatImg />
-                  <ChatCount>5</ChatCount>
-                </ListChat>
-              </ListInfo>
-            </List>
-          </Link>
-          <List>
-            <ListImg />
-            <ListData>
-              <ListTitle>당근나눔</ListTitle>
-              <ListContent>쓰레기통 무료나눔합니다. </ListContent>
-            </ListData>
-            <ListInfo>
-              <ListDate>23.02.01</ListDate>
-              <ListChat>
-                <ChatImg />
-                <ChatCount>5</ChatCount>
-              </ListChat>
-            </ListInfo>
-          </List>
-          <List>
-            <ListImg />
-            <ListData>
-              <ListTitle>당근나눔</ListTitle>
-              <ListContent>쓰레기통 무료나눔합니다. </ListContent>
-            </ListData>
-            <ListInfo>
-              <ListDate>23.02.01</ListDate>
-              <ListChat>
-                <ChatImg />
-                <ChatCount>5</ChatCount>
-              </ListChat>
-            </ListInfo>
-          </List>
-          <List>
-            <ListImg />
-            <ListData>
-              <ListTitle>당근나눔</ListTitle>
-              <ListContent>쓰레기통 무료나눔합니다. </ListContent>
-            </ListData>
-            <ListInfo>
-              <ListDate>23.02.01</ListDate>
-              <ListChat>
-                <ChatImg />
-                <ChatCount>5</ChatCount>
-              </ListChat>
-            </ListInfo>
-          </List>
+          {isList.map((listItem, i) => {
+            return (
+              <Link to={`/detail/${i + 1}`}>
+                <List>
+                  <ListImg />
+                  <ListData>
+                    <ListTitle>{listItem.title}</ListTitle>
+                    <ListContent>{listItem.text}</ListContent>
+                  </ListData>
+                  <ListInfo>
+                    <ListDate>{listItem.registerDate}</ListDate>
+                    {/*<ListChat>*/}
+                    {/*  <ChatImg />*/}
+                    {/*  <ChatCount>5</ChatCount>*/}
+                    {/*</ListChat>*/}
+                  </ListInfo>
+                </List>
+              </Link>
+            );
+          })}
         </ListWrapper>
         <Footer>푸터</Footer>
       </PageWrapper>
