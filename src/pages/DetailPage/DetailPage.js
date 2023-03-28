@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   AddBtn,
   CategoryTitleBtn,
@@ -25,7 +25,9 @@ import {
   HeaderIcon02,
   HeaderIcon03,
   Line,
+  List,
   PageWrapper,
+  Title,
   TxtWrap,
   UploadDate,
   UserImg,
@@ -33,11 +35,12 @@ import {
   UserName,
 } from '../../PageStyles';
 import He from 'styled-components/dist/styled-components.browser.esm';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import User from '../../assets/HeaderIcon_User.png';
 import * as PropTypes from 'prop-types';
+import axios from 'axios';
 
 function CommentCreatWrap(props) {
   return null;
@@ -46,6 +49,43 @@ function CommentCreatWrap(props) {
 CommentCreatWrap.propTypes = { children: PropTypes.node };
 
 function DetailPage() {
+  const [isPost, setPost] = useState();
+  const [isComment, setComment] = useState([]);
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`https://pr-dm-ca227.du.r.appspot.com/api/v1/post/${id}`)
+      .then((res) => {
+        setPost(res.data);
+        // console.log(isPost);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`http://pr-dm-ca227.du.r.appspot.com/api/v1/post/${id}/comment/list`)
+      .then((res) => {
+        setComment(res.data.content);
+        // console.log(res.data.content);
+      });
+  }, []);
+
+  const addOnClick = () => {
+    axios
+      .post(`https://pr-dm-ca227.du.r.appspot.com/api/v1/post/${id}`, 'text')
+      .then(() => {
+        console.log('댓글 등록');
+      });
+  };
+
+  const [isText, setText] = useState('');
+  const getText = (e) => {
+    setText(e.target.value);
+    console.log('댓글 : ' + isText);
+  };
+
   return (
     <div>
       <PageWrapper>
@@ -64,63 +104,39 @@ function DetailPage() {
           <TxtWrap>
             <UserName>qweasd111</UserName>
             <UserName>|</UserName>
-            <UploadDate>2022.02.01</UploadDate>
+            <UploadDate>{isPost?.registerDate || 'loading'}</UploadDate>
           </TxtWrap>
         </UserInfoWrapper>
+        <Title>{isPost?.title || 'loading'}</Title>
         <DetailLine />
-        <Content>
-          안녕하세요 봉사 모임 구합니다. 안녕하세요 봉사 모임
-          구합니다.안녕하세요 봉사 모임 구합니다.안녕하세요 봉사 모임 구합니다.
-        </Content>
+        <Content>{isPost?.text || 'loading'}</Content>
         <DetailLine />
-        <CommentInfoWrap>
-          <ChatImg />
-          <ChatCount>4</ChatCount>
-        </CommentInfoWrap>
+        {/*<CommentInfoWrap>*/}
+        {/*  <ChatImg />*/}
+        {/*  <ChatCount>4</ChatCount>*/}
+        {/*</CommentInfoWrap>*/}
         <CommentList>
-          <Comment>
-            <CommentInfo>
-              <CommentUserImg />
-              <CommentUserName>asdzxc22</CommentUserName>
-              <CommentUserName>|</CommentUserName>
-              <CommentDate>2022.02.01</CommentDate>
-            </CommentInfo>
-            <CommentContent>저요 저요</CommentContent>
-          </Comment>
-          <DetailLine />
-          <Comment>
-            <CommentInfo>
-              <CommentUserImg />
-              <CommentUserName>asdzxc22</CommentUserName>
-              <CommentUserName>|</CommentUserName>
-              <CommentDate>2022.02.01</CommentDate>
-            </CommentInfo>
-            <CommentContent>저요 저요</CommentContent>
-          </Comment>
-          <DetailLine />
-          <Comment>
-            <CommentInfo>
-              <CommentUserImg />
-              <CommentUserName>asdzxc22</CommentUserName>
-              <CommentUserName>|</CommentUserName>
-              <CommentDate>2022.02.01</CommentDate>
-            </CommentInfo>
-            <CommentContent>저요 저요</CommentContent>
-          </Comment>
-          <DetailLine />
-          <Comment>
-            <CommentInfo>
-              <CommentUserImg />
-              <CommentUserName>asdzxc22</CommentUserName>
-              <CommentUserName>|</CommentUserName>
-              <CommentDate>2022.02.01</CommentDate>
-            </CommentInfo>
-            <CommentContent>저요 저요</CommentContent>
-          </Comment>
-          <DetailLine />
+          {isComment &&
+            isComment.map((v, i) => {
+              return (
+                <>
+                  <Comment>
+                    <CommentInfo>
+                      <CommentUserImg />
+                      <CommentUserName>{isComment[i].postId}</CommentUserName>
+                      <CommentUserName>|</CommentUserName>
+                      <CommentDate>{isComment[i].registerDate}</CommentDate>
+                    </CommentInfo>
+                    <CommentContent>{isComment[i].text}</CommentContent>
+                  </Comment>
+                  <DetailLine />
+                </>
+              );
+            })}
           <CommentAddWrap>
-            <CommentAddInput />
-            <AddBtn>등록</AddBtn>
+            <CommentAddInput onChange={getText} />
+            <AddBtn onClick={addOnClick}>등록</AddBtn>
+            {/*<button onClick={commentGet}>dasd</button>*/}
           </CommentAddWrap>
         </CommentList>
       </PageWrapper>
