@@ -1,4 +1,17 @@
 import React from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+  setPersistence,
+  browserSessionPersistence,
+} from 'firebase/auth';
+import { Link } from 'react-router-dom';
+import { auth } from './Firebase';
+import { useState } from 'react';
+
 import {
   BackTitle,
   Header,
@@ -16,10 +29,6 @@ import loginButtonImg from '../../assets/googleLogin.png';
 import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import User from '../../assets/HeaderIcon_User.png';
-import { Link } from 'react-router-dom';
-import { auth } from './Firebase';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { useState } from 'react';
 
 function LoginPage() {
   const [userData, setUserData] = useState(null);
@@ -34,6 +43,7 @@ function LoginPage() {
         .catch((err) => {
           console.log(err);
         });
+
   }
   return (
     <div>

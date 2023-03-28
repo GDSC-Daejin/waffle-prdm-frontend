@@ -18,12 +18,13 @@ import {
   HeaderIcon02,
   HeaderIcon03,
   ChartTitleWrap,
-  FullScreen,
+  FullScreen, BannerImg,
 } from '../../PageStyles';
 import menu from '../../assets/222.svg';
 import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import User from '../../assets/HeaderIcon_User.png';
+import Banner from '../../assets/Banner.png';
 import ChartPage from './ChartPage';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -75,6 +76,7 @@ function MainPage() {
               <HeaderIcon03 src={User} />
             </Link>
           </Header>
+          <BannerImg src={Banner}/>
           <TipBannerWrap>
             <TipBanner>
               Tip 배너 (랜덤)
