@@ -124,6 +124,7 @@ export const LoginButton = styled.img`
   margin-left: 20%;
   width: 350px;
   filter: drop-shadow(1px 1px 1px #282c34);
+  cursor: pointer;
 `;
 export const MenuWrap = styled.div`
   margin: 10px 0 15px 0;
