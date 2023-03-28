@@ -24,31 +24,30 @@ import menu from '../../assets/222.svg';
 import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import User from '../../assets/HeaderIcon_User.png';
-import ChartPage from './ChartPage';
+import ChartHeader from "./ChartHeader";
+import ChartBody from './ChartBody';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function MainPage() {
+
   const ApiFoodwaste = () => {
     axios.get('https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste/city')
         .then(response => {
           console.log(response.data);
         })
+        .then(data => {
+          this.setState({ data: data });
+        })
         .catch(error => {
           console.log(error);
         });
   }
-  //테스트용
-  const ApiFoodwaste2 = () => {
-    fetch('https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste/locations')
-        .then((response)=>console.log("response: ", response.json()))
-        .catch(error => console.error(error));
-  }
-//
   const ApiLocations = () => {
     axios.get('https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste/city/서울특별시')
         .then(response => {
           console.log(response.data);
+          return response.data
         })
         .catch(error => {
           console.log(error);
@@ -83,15 +82,8 @@ function MainPage() {
             </TipBanner>
           </TipBannerWrap>
           <Line />
-          <ChartWrap>
-            <ChartTitleWrap>
-              <ChartTitle>음식물 차트</ChartTitle>
-              <ChartSubTitle>지역을 선택해 주세요</ChartSubTitle>
-              <button onClick={ApiFoodwaste}>Foodwaste</button>
-              <button onClick={ApiLocations}>Locations</button>
-            </ChartTitleWrap>
-            <ChartPage />
-          </ChartWrap>
+          <ChartHeader/>
+          <ChartBody/>
           <Line />
           <MenuWrap>
             <MenuTitle>
