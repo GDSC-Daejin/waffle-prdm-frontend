@@ -62,10 +62,12 @@ function LoginPage() {
             로그인/회원가입 후 더 많은 경험을 즐기세요!
           </LoginSubTitle>
           <div>
-            <button onClick={handleGoogleLogin}>Login</button>
+            <button onClick={handleGoogleLogin}>
+              <LoginButton src={loginButtonImg} />
+            </button>
             {userData ? userData.displayName : null}
           </div>
-          <LoginButton src={loginButtonImg} />
+
         </LoginWrap>
       </PageWrapper>
     </div>
