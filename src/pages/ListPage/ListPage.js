@@ -1,7 +1,9 @@
 import React from 'react';
 import {
+  BannerImg,
   ChatCount,
   ChatImg,
+  EditIcon,
   Footer,
   Header,
   HeaderIcon01,
@@ -30,23 +32,26 @@ import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import { Link } from 'react-router-dom';
 import User from '../../assets/HeaderIcon_User.png';
+import EditImg from '../../assets/EditIcon.png';
+import Banner from "../../assets/Banner.png";
 
 function ListPage() {
   return (
     <div>
       <PageWrapper>
         <Header>
+          <HeaderIcon01 src={Back} />
           <Link to="/">
-            <HeaderIcon01 src={Back} />
+            <HeaderIcon02 src={Home} />
           </Link>
-          <HeaderIcon02 src={Home} />
           <Link to="/login">
             <HeaderIcon03 src={User} />
           </Link>
         </Header>
-        <ListBannerWrap>
-          <ListBanner>리스트 배너</ListBanner>
-        </ListBannerWrap>
+        {/*<ListBannerWrap>*/}
+        {/*  <ListBanner>리스트 배너</ListBanner>*/}
+        {/*</ListBannerWrap>*/}
+        <BannerImg src={Banner}/>
         <TopBox>
           <MenuNameBox>챌린지 인증</MenuNameBox>
           <SortBtnWrap>
@@ -113,6 +118,9 @@ function ListPage() {
               </ListChat>
             </ListInfo>
           </List>
+          <Link to="/board">
+            <EditIcon src={EditImg}></EditIcon>
+          </Link>
         </ListWrapper>
         <Footer>푸터</Footer>
       </PageWrapper>

@@ -48,9 +48,16 @@ export const HeaderIcon03 = styled.img`
   height: 30px;
   opacity: 70%;
 `;
+export const EditIcon = styled.img`
+    position: fixed;
+    right: 250px;
+    bottom: 30px;
+    width: 80px;
+    height: 80px;
+`
 export const BannerImg = styled.img`
-  position: absolute;
   width: 600px;
+  height: auto;
 `
 export const TipBannerWrap = styled.div`
   height: 100px;

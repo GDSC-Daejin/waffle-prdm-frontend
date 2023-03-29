@@ -8,25 +8,28 @@ import { BackTitle } from './PageStyles';
 import ListPage from './pages/ListPage/ListPage';
 import DetailPage from './pages/DetailPage/DetailPage';
 import BoardPage from "./pages/BoardPage/BoardPage";
+import {RecoilRoot} from "recoil";
 
 function App() {
   return (
-    <div className="App">
-      <BackTitle>
-        Find a Delicious Slice
-        <br />
-        at the Bake Shop
-      </BackTitle>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/list" element={<ListPage />} />
-          <Route path="/detail" element={<DetailPage />} />
-          <Route path="/board" element={<BoardPage />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+      <RecoilRoot>
+          <div className="App">
+              <BackTitle>
+                  Find a Delicious Slice
+                  <br />
+                  at the Bake Shop
+              </BackTitle>
+              <BrowserRouter>
+                  <Routes>
+                      <Route path="/" element={<MainPage />} />
+                      <Route path="/login" element={<LoginPage />} />
+                      <Route path="/list" element={<ListPage />} />
+                      <Route path="/detail" element={<DetailPage />} />
+                      <Route path="/board" element={<BoardPage />} />
+                  </Routes>
+              </BrowserRouter>
+          </div>
+      </RecoilRoot>
   );
 }
 

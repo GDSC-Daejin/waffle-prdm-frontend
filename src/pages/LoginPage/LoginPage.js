@@ -13,7 +13,7 @@ import { auth } from './Firebase';
 import { useState } from 'react';
 
 import {
-  BackTitle,
+  BackTitle, BannerImg,
   Header,
   HeaderIcon01,
   HeaderIcon02,
@@ -29,6 +29,7 @@ import loginButtonImg from '../../assets/googleLogin.png';
 import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import User from '../../assets/HeaderIcon_User.png';
+import Banner from "../../assets/Banner.png";
 
 function LoginPage() {
   const [userData, setUserData] = useState(null);
@@ -59,11 +60,13 @@ function LoginPage() {
       </BackTitle>
       <PageWrapper>
         <Header>
+          <HeaderIcon01 src={Back} />
           <Link to="/">
-            <HeaderIcon01 src={Back} />
             <HeaderIcon02 src={Home} />
           </Link>
-          <HeaderIcon03 src={User} />
+          <Link to="/login">
+            <HeaderIcon03 src={User} />
+          </Link>
         </Header>
         <Line />
         <LoginWrap>
