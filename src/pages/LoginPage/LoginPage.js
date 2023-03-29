@@ -24,6 +24,7 @@ import { useState } from 'react';
 function LoginPage() {
   const [userData, setUserData] = useState(null);
 
+  //로그인 관리 함수
   function handleGoogleLogin() {
     const provider = new GoogleAuthProvider(); // provider를 구글로 설정
     signInWithPopup(auth, provider) // popup을 이용한 signup
@@ -34,6 +35,10 @@ function LoginPage() {
         .catch((err) => {
           console.log(err);
         });
+  }
+  //로그인 이동 onClick함수
+  function loginMove(){
+    window.location.href = "https://pr-dm-ca227.du.r.appspot.com/oauth2/authorization/google";
   }
   return (
     <div>
@@ -62,8 +67,8 @@ function LoginPage() {
             로그인/회원가입 후 더 많은 경험을 즐기세요!
           </LoginSubTitle>
           <div>
-            <button onClick={handleGoogleLogin}>
-              <LoginButton src={loginButtonImg} />
+            <button onClick={loginMove}>
+              <LoginButton src={loginButtonImg}/>
             </button>
             {userData ? userData.displayName : null}
           </div>
