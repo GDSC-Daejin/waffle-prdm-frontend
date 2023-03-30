@@ -20,8 +20,6 @@ function ChartBody(){
                 }
                 console.log("dataTest:",dataArray);
             })
-            .then(console.log("왜 안나오지: ",dataArray))
-            .then(console.log("맵 데이터: ",chartMapData,))
             .catch(error => {
                 console.error(error);
             })
