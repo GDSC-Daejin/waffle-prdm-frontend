@@ -23,7 +23,7 @@ function ChartBody(){
             .catch(error => {
                 console.error(error);
             })
-    }, []);
+    }, [dataArray]);
 
     const options = {
         title:"음식물 쓰레기 차트",
