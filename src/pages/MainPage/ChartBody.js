@@ -2,21 +2,23 @@ import { Chart } from "react-google-charts";
 import React, {useEffect, useState} from "react";
 import {ChartSection} from "../../PageStyles";
 import axios from "axios";
-
-const data = [
-    {name: '12', amount: '122'},
-    {name: '12', amount: '122'},
-    {name: '12', amount: '122'}
-]
+import ChartHeader from "./ChartHeader";
 
 function ChartBody(){
-    const dataArray = [];
+    const dataArray = [['구', '쓰레기 양']];
     let chartMapData = [];
+    const CityName3 = `서울특별시`;
+
+    const [MapData, setMapData] = useState([]);
 
     useEffect(() => {
-        axios.get("https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste?cityDo=서울특별시&end=2021-07-01&start=2021-07-01")
+        axios.get(`https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste?cityDo=${CityName3}&end=2021-07-05&start=2021-07-01`)
             .then((response) => {
-                chartMapData.push(response.data.map(item => [ item.cityDo, item.amount]));
+                chartMapData.push(response.data.map(item => [ item.cityGu, item.amount]));
+                for (let i = 0; i <chartMapData[1].length; i++){
+                    dataArray.push(chartMapData[1][i]);
+                }
+                console.log("dataTest:",dataArray);
             })
             .then(console.log("왜 안나오지: ",dataArray))
             .then(console.log("맵 데이터: ",chartMapData,))
@@ -24,27 +26,19 @@ function ChartBody(){
                 console.error(error);
             })
     }, []);
+
     const options = {
-        title:
-            "Fertility rate vs life expectancy in selected countries (2010)." +
-            " X=Life Expectancy, Y=Fertility, Bubble size=Population, Bubble color=Region",
-        hAxis: { title: "Life Expectancy" },
-        vAxis: { title: "Fertility Rate" },
-        bubble: { textStyle: { fontSize: 11 } },
+        title:"음식물 쓰레기 차트",
     };
-
-    let data = [
-        chartMapData
-    ]
-
+    
     return(
         <ChartSection>
             <Chart
-                chartType="BarChart"
-                data={chartMapData}
+                chartType="Bar"
+                data={dataArray}
                 options={options}
                 width={"100%"}
-                height={"400px"}
+                height={"100%"}
             />
         </ChartSection>
     );

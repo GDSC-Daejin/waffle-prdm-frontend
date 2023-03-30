@@ -99,6 +99,10 @@ export const ChartSection = styled.div`
   display: flex;
   margin: 20px;
 `;
+
+export const SelectBoxWrap = styled.div`
+`
+
 export const LoginWrap = styled.div`
   position: relative;
   flex-wrap: wrap;

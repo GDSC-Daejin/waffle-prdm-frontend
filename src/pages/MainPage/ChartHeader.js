@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { ChartSubTitle, ChartTitle, ChartTitleWrap, ChartWrap } from "../../PageStyles";
+import {ChartSection, ChartSubTitle, ChartTitle, ChartTitleWrap, ChartWrap, SelectBoxWrap} from "../../PageStyles";
+import {Chart} from "react-google-charts";
 
 function ChartHeader() {
-    const whArray = [];
-    const wh = () => {
-        axios.get("https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste?cityDo=서울특별시&end=2021-07-02&start=2021-07-01")
-            .then((response) => {
-                console.log("1. wh로 불러온값: ",response.data);
-                response.data.map((c) => whArray.push(c.amount));
-            })
-            .then(console.log("2. whArray값: ",whArray))
-    };
-    // City selectBox
-    const [CityData, CitySetData] = useState([]);
+    // *** [selectBox 설정] ***
+    let selectTest = ``;
+
+    // 1) City selectBox
+    const [CityData, CitySetData] = useState([]); //API에서 가져온 City값 저장하는 state
     const [selectedCity, setSelectedCity] = useState(null); // 선택된 도시를 저장하는 state
 
     useEffect(() => {
@@ -25,19 +20,17 @@ function ChartHeader() {
 
     const handleCitySelect = (event) => {
         setSelectedCity(event.target.value);
-    };
-
-    // CityGu SelectBox
-    const [CityGuData, CityGuSetData] = useState([]);
-    const [selectedCityGu, setSelectedCityGu] = useState(null);
-    const selectTest = `서울특별시`;
-
-    useEffect((CityGuData) => {
-        axios.get("https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste/city/서울특별시")
+        // 두번째 select
+        axios.get(`https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste/city/${event.target.value}`)
             .then((response) => {
                 CityGuSetData(response.data);
             });
-    }, [selectedCity]);
+    };
+
+    // 2) CityGu SelectBox
+    const [CityGuData, CityGuSetData] = useState([]);
+    const [selectedCityGu, setSelectedCityGu] = useState(null);
+
     const handleCityGuSelect = (event) => {
         setSelectedCityGu(event.target.value);
     };
@@ -48,7 +41,7 @@ function ChartHeader() {
                 <ChartTitle>음식물 차트</ChartTitle>
                 <ChartSubTitle>지역을 선택해 주세요</ChartSubTitle>
                 {/*첫번째 selectBox : 시 선택*/}
-                <div>
+                <SelectBoxWrap selectCity={selectedCity}>
                     <select onChange={handleCitySelect}>
                         <option value={null}>시를 선택하세요</option>
                         {CityData.map((city) => (
@@ -56,7 +49,7 @@ function ChartHeader() {
                         ))}
                     </select>
                     <p>{selectedCity}</p>
-                </div>
+                </SelectBoxWrap >
                 {/*두번째SelectBox*/}
                 <div>
                     <select onChange={handleCityGuSelect}>
@@ -67,9 +60,7 @@ function ChartHeader() {
                     </select>
                     <p>{selectedCityGu}</p>
                 </div>
-                <button onClick={wh}>차트 테스트용 버튼</button>
             </ChartTitleWrap>
-            {/*{selectedCity && <ChartBody selectedCity={selectedCity} />}*/}
         </ChartWrap>
     );
 }
