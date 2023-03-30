@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import {
+  BannerImg,
   ChatCount,
   ChatImg,
+  EditIcon,
   Footer,
   Header,
   HeaderIcon01,
@@ -28,9 +30,11 @@ import {
 } from '../../PageStyles';
 import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
+import EditImg from '../../assets/EditIcon.png';
 import { Link } from 'react-router-dom';
 import User from '../../assets/HeaderIcon_User.png';
 import axios from 'axios';
+import Banner from "../../assets/Banner.png";
 
 function ListPage() {
   const [isList, setList] = useState([]);
@@ -48,17 +52,15 @@ function ListPage() {
     <div>
       <PageWrapper>
         <Header>
-          <Link to="/">
-            <HeaderIcon01 src={Back} />
+          <HeaderIcon01 src={Back} />
+          <Link to={"/"}>
+            <HeaderIcon02 src={Home} />
           </Link>
-          <HeaderIcon02 src={Home} />
           <Link to="/login">
             <HeaderIcon03 src={User} />
           </Link>
         </Header>
-        <ListBannerWrap>
-          <ListBanner>리스트 배너</ListBanner>
-        </ListBannerWrap>
+        <BannerImg src={Banner}/>
         <TopBox>
           <MenuNameBox>챌린지 인증</MenuNameBox>
           {/*<SortBtnWrap>*/}
@@ -87,6 +89,67 @@ function ListPage() {
               </Link>
             );
           })}
+          <Link to="/detail">
+            <List>
+              <ListImg />
+              <ListData>
+                <ListTitle>당근나눔</ListTitle>
+                <ListContent>쓰레기통 무료나눔합니다. </ListContent>
+              </ListData>
+              <ListInfo>
+                <ListDate>23.02.01</ListDate>
+                <ListChat>
+                  <ChatImg />
+                  <ChatCount>5</ChatCount>
+                </ListChat>
+              </ListInfo>
+            </List>
+          </Link>
+          <List>
+            <ListImg />
+            <ListData>
+              <ListTitle>당근나눔</ListTitle>
+              <ListContent>쓰레기통 무료나눔합니다. </ListContent>
+            </ListData>
+            <ListInfo>
+              <ListDate>23.02.01</ListDate>
+              <ListChat>
+                <ChatImg />
+                <ChatCount>5</ChatCount>
+              </ListChat>
+            </ListInfo>
+          </List>
+          <List>
+            <ListImg />
+            <ListData>
+              <ListTitle>당근나눔</ListTitle>
+              <ListContent>쓰레기통 무료나눔합니다. </ListContent>
+            </ListData>
+            <ListInfo>
+              <ListDate>23.02.01</ListDate>
+              <ListChat>
+                <ChatImg />
+                <ChatCount>5</ChatCount>
+              </ListChat>
+            </ListInfo>
+          </List>
+          <List>
+            <ListImg />
+            <ListData>
+              <ListTitle>당근나눔</ListTitle>
+              <ListContent>쓰레기통 무료나눔합니다. </ListContent>
+            </ListData>
+            <ListInfo>
+              <ListDate>23.02.01</ListDate>
+              <ListChat>
+                <ChatImg />
+                <ChatCount>5</ChatCount>
+              </ListChat>
+            </ListInfo>
+          </List>
+          <Link to="/board">
+            <EditIcon src={EditImg}></EditIcon>
+          </Link>
         </ListWrapper>
         <Footer>푸터</Footer>
       </PageWrapper>

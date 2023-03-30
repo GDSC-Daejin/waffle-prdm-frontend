@@ -49,11 +49,23 @@ export const HeaderIcon03 = styled.img`
   opacity: 70%;
 `;
 
+export const EditIcon = styled.img`
+    position: fixed;
+    right: 250px;
+    bottom: 30px;
+    width: 80px;
+    height: 80px;
+`
+
 export const TipBannerWrap = styled.div`
   height: 100px;
   background-color: darkgray;
   text-align: center;
 `;
+export const BannerImg = styled.img`
+  width: 600px;
+  height: auto;
+`
 
 export const TipBanner = styled.div`
   color: #fff;
@@ -99,6 +111,10 @@ export const ChartSection = styled.div`
   display: flex;
   margin: 20px;
 `;
+
+export const SelectBoxWrap = styled.div`
+`
+
 export const LoginWrap = styled.div`
   position: relative;
   flex-wrap: wrap;
@@ -124,6 +140,7 @@ export const LoginButton = styled.img`
   margin-left: 20%;
   width: 350px;
   filter: drop-shadow(1px 1px 1px #282c34);
+  cursor: pointer;
 `;
 export const MenuWrap = styled.div`
   margin: 10px 0 15px 0;

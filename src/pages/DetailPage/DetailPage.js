@@ -90,10 +90,10 @@ function DetailPage() {
     <div>
       <PageWrapper>
         <Header>
-          <Link to="/">
-            <HeaderIcon01 src={Back} />
+          <HeaderIcon01 src={Back} />
+          <Link to={"/"}>
+            <HeaderIcon02 src={Home} />
           </Link>
-          <HeaderIcon02 src={Home} />
           <Link to="/login">
             <HeaderIcon03 src={User} />
           </Link>
