@@ -28,6 +28,7 @@ import ChartHeader from "./ChartHeader";
 import ChartBody from './ChartBody';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import ChartBody2 from "./ChartBody2";
 
 function MainPage() {
 
@@ -83,7 +84,7 @@ function MainPage() {
           </TipBannerWrap>
           <Line />
           <ChartHeader/>
-          <ChartBody/>
+          <ChartBody2/>
           <Line />
           <MenuWrap>
             <MenuTitle>
