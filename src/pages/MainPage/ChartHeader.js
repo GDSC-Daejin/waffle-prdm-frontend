@@ -49,7 +49,6 @@ function ChartHeader() {
                             <option key={city}>{city}</option>
                         ))}
                     </select>
-                    <p>{selectedCity}</p>
                 </SelectBoxWrap >
                 {/*두번째SelectBox*/}
                 <div>
@@ -59,7 +58,6 @@ function ChartHeader() {
                             <option key={gu}>{gu}</option>
                         ))}
                     </select>
-                    <p>{selectedCityGu}</p>
                 </div>
             </ChartTitleWrap>
         </ChartWrap>
