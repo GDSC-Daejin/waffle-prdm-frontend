@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ChartSubTitle, ChartTitle, ChartTitleWrap, ChartWrap } from "../../PageStyles";
-import ChartBody from "./ChartBody";
 
 function ChartHeader() {
     const whArray = [];
     const wh = () => {
-        axios.get("https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste?cityDo=서울특별시&cityGu=도봉구&end=2021-07-15&start=2021-07-01")
+        axios.get("https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste?cityDo=서울특별시&end=2021-07-02&start=2021-07-01")
             .then((response) => {
-                console.log(response.data);
+                console.log("1. wh로 불러온값: ",response.data);
                 response.data.map((c) => whArray.push(c.amount));
             })
-            .then(console.log("왜 안나오지: ",whArray))
+            .then(console.log("2. whArray값: ",whArray))
     };
     // City selectBox
     const [CityData, CitySetData] = useState([]);
@@ -31,13 +30,14 @@ function ChartHeader() {
     // CityGu SelectBox
     const [CityGuData, CityGuSetData] = useState([]);
     const [selectedCityGu, setSelectedCityGu] = useState(null);
+    const selectTest = `서울특별시`;
 
     useEffect((CityGuData) => {
-        axios.get("https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste/city/${CityGuData}")
+        axios.get("https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste/city/서울특별시")
             .then((response) => {
                 CityGuSetData(response.data);
             });
-    }, []);
+    }, [selectedCity]);
     const handleCityGuSelect = (event) => {
         setSelectedCityGu(event.target.value);
     };
@@ -47,7 +47,7 @@ function ChartHeader() {
             <ChartTitleWrap>
                 <ChartTitle>음식물 차트</ChartTitle>
                 <ChartSubTitle>지역을 선택해 주세요</ChartSubTitle>
-                {/*첫번째 selectBox*/}
+                {/*첫번째 selectBox : 시 선택*/}
                 <div>
                     <select onChange={handleCitySelect}>
                         <option value={null}>시를 선택하세요</option>
@@ -56,16 +56,16 @@ function ChartHeader() {
                         ))}
                     </select>
                     <p>{selectedCity}</p>
-                    {/*<button onClick={}>test임다</button>*/}
                 </div>
                 {/*두번째SelectBox*/}
                 <div>
-                    <select>
-                        <option>22선택하세요</option>
+                    <select onChange={handleCityGuSelect}>
+                        <option value={null}>도를 선택하세요</option>
                         {CityGuData.map((gu)=>(
                             <option key={gu}>{gu}</option>
                         ))}
                     </select>
+                    <p>{selectedCityGu}</p>
                 </div>
                 <button onClick={wh}>차트 테스트용 버튼</button>
                 <button onClick={console.log(whArray)}>배열 테스트</button>

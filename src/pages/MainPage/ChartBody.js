@@ -15,12 +15,18 @@ const wh = () => {
         })
 };
 
+const data = [
+    {name: '12', amount: '122'},
+    {name: '12', amount: '122'},
+    {name: '12', amount: '122'}
+]
+
 function ChartBody(){
     return(
         <ChartSection>
             <Chart
                 chartType="LineChart"
-                data={0}
+                data={data}
                 //options={options}
                 width={"100%"}
                 height={"400px"}
