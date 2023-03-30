@@ -54,11 +54,13 @@ function LoginPage() {
       </BackTitle>
       <PageWrapper>
         <Header>
-          <Link to="/">
-            <HeaderIcon01 src={Back} />
+          <HeaderIcon01 src={Back} />
+          <Link to={"/"}>
             <HeaderIcon02 src={Home} />
           </Link>
-          <HeaderIcon03 src={User} />
+          <Link to="/login">
+            <HeaderIcon03 src={User} />
+          </Link>
         </Header>
         <Line />
         <LoginWrap>

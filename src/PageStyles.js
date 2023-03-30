@@ -49,11 +49,23 @@ export const HeaderIcon03 = styled.img`
   opacity: 70%;
 `;
 
+export const EditIcon = styled.img`
+    position: fixed;
+    right: 250px;
+    bottom: 30px;
+    width: 80px;
+    height: 80px;
+`
+
 export const TipBannerWrap = styled.div`
   height: 100px;
   background-color: darkgray;
   text-align: center;
 `;
+export const BannerImg = styled.img`
+  width: 600px;
+  height: auto;
+`
 
 export const TipBanner = styled.div`
   color: #fff;

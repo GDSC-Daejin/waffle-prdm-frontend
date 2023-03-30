@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {
   BackTitle,
+  BannerImg,
   ChartWrap,
   ChartTitle,
   Footer,
@@ -24,6 +25,7 @@ import menu from '../../assets/222.svg';
 import Back from '../../assets/HeaderIcon_Back.png';
 import Home from '../../assets/HeaderIcon_Home.png';
 import User from '../../assets/HeaderIcon_User.png';
+import Banner from '../../assets/Banner.png';
 import ChartHeader from "./ChartHeader";
 import ChartBody from './ChartBody';
 import { Link } from 'react-router-dom';
@@ -75,11 +77,7 @@ function MainPage() {
             </Link>
           </Header>
           <TipBannerWrap>
-            <TipBanner>
-              Tip 배너 (랜덤)
-              <br />
-              ex) 식재료 껍질은 육수 등에 활용 가능하다는 사실!
-            </TipBanner>
+            <BannerImg src={Banner}/>
           </TipBannerWrap>
           <Line />
           <ChartHeader/>
@@ -100,7 +98,9 @@ function MainPage() {
               그린 챌린지
               <MenuSubTilte>음식물 쓰레기 줄이기 챌린지</MenuSubTilte>
             </MenuTitle>
-            <MenuImg src={menu} />
+            <Link to="list">
+              <MenuImg src={menu} />
+            </Link>
           </MenuWrap>
           <Line />
           <MenuWrap>
@@ -109,7 +109,9 @@ function MainPage() {
               <MenuSubTilte>다양한 꿀팁을 공유해봅시다~!</MenuSubTilte>
             </MenuTitle>
             <Link to="/board">
-              <MenuImg src={menu} />
+              <Link to="list">
+                <MenuImg src={menu} />
+              </Link>
             </Link>
           </MenuWrap>
           <Line />
