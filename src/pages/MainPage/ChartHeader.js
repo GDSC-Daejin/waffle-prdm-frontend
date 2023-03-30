@@ -68,7 +68,6 @@ function ChartHeader() {
                     <p>{selectedCityGu}</p>
                 </div>
                 <button onClick={wh}>차트 테스트용 버튼</button>
-                <button onClick={console.log(whArray)}>배열 테스트</button>
             </ChartTitleWrap>
             {/*{selectedCity && <ChartBody selectedCity={selectedCity} />}*/}
         </ChartWrap>
