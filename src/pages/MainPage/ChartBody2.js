@@ -12,10 +12,10 @@ function ChartBody2(){
 
     const [MapData, setMapData] = useState([]);
     useEffect(() => {
-        axios.get("https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste?cityDo=서울특별시&end=2021-07-01&start=2021-07-01")
+        axios.get("https://pr-dm-ca227.du.r.appspot.com/api/v1/foodwaste?cityDo=서울특별시&end=2021-07-15&start=2021-07-01")
             .then((response) => {
                 chartMapData.push(response.data.map(item => [ item.cityDo, item.amount]));
-                for (let i = 0; i <chartMapData.length; i++){
+                for (let i = 0; i <chartMapData[1].length; i++){
                     dataArray.push(chartMapData[1][i]);
                 }
                 // dataArray.push(chartMapData[1][0]);
